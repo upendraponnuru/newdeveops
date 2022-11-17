@@ -3,12 +3,7 @@ pipeline{
     environment {
         PATH = "$PATH:/Downloads/apache-maven-3.8.5-bin/apache-maven-3.8.5/bin"
     }
-    stages{
-       stage('GetCode'){
-            steps{
-                git 'https://github.com/ravdy/javaloginapp.git'
-            }
-         }        
+    stages{    
        stage('Build'){
             steps{
                 sh 'mvn clean package'
